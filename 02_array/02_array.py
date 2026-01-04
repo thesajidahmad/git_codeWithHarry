@@ -1,14 +1,11 @@
-# from array import *
-from numpy import *
+from array import *
 
-# var = array('i', [1,2,3,4,5,6,7,8,9])           #from array import *
-var = array([1,2,3,4,5,6,7,8,9])                    #from numpy import *
+var = array('i', [1,2,3,4,5,6,7,8,9])
 print("Original array: ", end="")
 for i in var:
     print(i, end=" ")
 print("\n")
 
-# ------------------------------------------------------------
 #array reverse
 #insert(index, value)                               (insert value at index)
 #append(value)                                      (append to last)
@@ -19,25 +16,6 @@ print("\n")
 #var[starting index : ending index]                 (slice the array (include start & exclude end)
 #var[::-1]                                          (Reversing the array using slice)
 #array input
-
-# ------------------------------------------------------------
-# Difference between Python array module and NumPy array
-#
-# array module:
-# - Built-in Python module (no external installation needed)
-# - Stores elements of the same data type only
-# - Supports basic operations (append, insert, pop, slicing)
-# - Slower for mathematical and scientific computations
-# - Best for simple, small, one-dimensional numeric data
-#
-# NumPy array:
-# - External library (requires installation: pip install numpy)
-# - Stores elements of the same data type
-# - Very fast and optimized for numerical computations
-# - Supports multi-dimensional arrays (2D, 3D, etc.)
-# - Provides advanced mathematical, statistical, and linear algebra functions
-# - Widely used in data science, machine learning, and scientific computing
-# ------------------------------------------------------------
 
 
 #array reverse
