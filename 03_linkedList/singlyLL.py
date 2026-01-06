@@ -9,42 +9,40 @@ class SinglyLinkedList:
 
     def append(self, value):
         new_node = Node(value)
-
         if(self.head == None):
             self.head = new_node
+        
         else:
-            current = self.head
-            while(current.next != None):
-                current = current.next
-            current.next = new_node
+            curr_node = self.head
+            while(curr_node.next != None):
+                curr_node = curr_node.next
+            curr_node.next = new_node
 
     def traversal(self):
         if(self.head == None):
-            print("Linked List is empty")
-
+            print("Linked list is empty")
         else:
-            current = self.head
-            while(current != None):
-                print(current.data, end=" ")
-                current = current.next
-    
-    def insert(self, val, position):
-        new_node = Node(val)
-        if(position == 0):
+            curr_node = self.head
+            while(curr_node != None):
+                print(curr_node.data, end=" ")
+                curr_node = curr_node.next
+
+    def insertAt(self, value, position):
+        new_node = Node(value)
+        if (position == 0):
             new_node.next = self.head
             self.head = new_node
+
         else:
             count = 0
             curr_node = self.head
-            pre_node = None
+            prev_node = None
             while(curr_node != None and count < position):
-                pre_node = curr_node
+                prev_node = curr_node
                 curr_node = curr_node.next
                 count += 1
-            pre_node.next = new_node
+            prev_node.next = new_node
             new_node.next = curr_node
-
-
 
 
 
@@ -54,4 +52,5 @@ sll.append(10)
 sll.append(20)
 sll.append(30)
 sll.append(40)
+sll.insertAt(5,2)
 sll.traversal()
