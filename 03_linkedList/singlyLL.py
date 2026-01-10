@@ -68,3 +68,16 @@ class SinglyLinkedList:
             curr_node = curr_node.next
 
         print("Node not Found :(")
+
+
+sll = SinglyLinkedList()
+sll.append(10)
+sll.append(20)
+sll.append(30)
+sll.append(40)
+
+sll.insertAt(22,2)
+sll.traversal()
+
+sll.delete(40)
+sll.traversal()
