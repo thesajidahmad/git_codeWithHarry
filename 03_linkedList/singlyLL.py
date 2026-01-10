@@ -36,6 +36,7 @@ class SinglyLinkedList:
         if(position == 0):
             new_node.next = self.head
             self.head = new_node
+            return
 
         else:
             count = 0
@@ -43,38 +44,27 @@ class SinglyLinkedList:
                 prev_node = curr_node
                 curr_node = curr_node.next
                 count += 1
+                
+            if(prev_node == None):
+                print("Position out of range")
+                return
+            
             prev_node.next = new_node
             new_node.next = curr_node
 
     def delete(self, value):
         curr_node = self.head
-        if(curr_node.next != None):
+        prev_node = None
+
+        while(curr_node != None):
             if(curr_node.data == value):
-                self.head = curr_node.next
-                return
-            else:
-                found = False
-                prev_node = None
-                while(curr_node != None):
-                    if (curr_node.value == value):
-                        found = True
-                    prev_node = curr_node
-                    curr_node = curr_node.next
-                if found:
-                    prev_node.next = curr_node.next
-
+                if(prev_node == None):
+                    self.head = curr_node.next
                 else:
-                    print("Node not Found :(")
+                    prev_node.next = curr_node.next
+                return
 
+            prev_node = curr_node
+            curr_node = curr_node.next
 
-sll = SinglyLinkedList()
-sll.append(10)
-sll.append(20)
-sll.append(30)
-sll.append(40)
-
-sll.insertAt(22,2)
-sll.traversal()
-
-sll.delete(10)
-sll.traversal()
+        print("Node not Found :(")
